@@ -1,0 +1,26 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+      - ./redlock-db.sql:/docker-entrypoint-initdb.d/redlock-db.sql
+    environment:
+      MYSQL_DATABASE: redlock
+      MYSQL_ROOT_PASSWORD: ikanasin
+    ports:
+      - "3306:3306"
+    networks:
+      - db_network
+  app:
+    image: redlock-imagev5
+    container_name: redlock-web-2.0
+    ports:
+      - "7077:80"
+    depends_on:
+      - db
+    networks:
+      - db_network
+networks:
+  db_network:
+    name: db_network
