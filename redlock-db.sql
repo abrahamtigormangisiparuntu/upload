@@ -7,7 +7,7 @@ CREATE TABLE users (
 );
 
 INSERT INTO users
-VALUES (1, "jams", "kemanggisan", "rektor");
+VALUES (1, "jams", "kemanggisan", "mahasiswa");
 
 INSERT INTO users
-VALUES (2, "jesslyn", "beautiful hope", "rektor");
+VALUES (2, "jenny", "beautiful hope", "idola korea");
